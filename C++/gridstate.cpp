@@ -9,7 +9,7 @@ State::State()
 {
     gridwidth = 4;
     gridheight = 4;
-    gamma = 0.9;
+    gamma = 0.99;
     transition_succ = 0.8;
     transition_fail = 0.2;
 
@@ -68,12 +68,12 @@ int State::action_succ(int action)
         {
             action = rand() % 4;
         }
-        if((index_x == 0 && action == 0) || (index_x == 4 && action == 3))
+        if((index_x == 0 && action == 0) || (index_x == 3 && action == 2))
         {
             final = false; 
             action = copy_action;
         }
-        if((index_y == 0 && action == 1) || (index_y == 4 && action == 4))
+        if((index_y == 0 && action == 1) || (index_y == 3 && action == 3))
         {
             final = false; 
             action = copy_action;

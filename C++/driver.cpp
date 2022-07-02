@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include <vector>
+//#include <time.h>
 
 #include "gridstate.h"
 #include "VI_agent.h"
@@ -10,12 +11,14 @@ using namespace std;
 
 int main()
 {
+    srand(100);
     State GridWorld[4][4];
     for(int i = 0; i < 4; i++)
     {
         for(int j = 0; j < 4; j++)
         {
             GridWorld[i][j].assign_reward(-1);
+            GridWorld[i][j].assign_index(i, j);
         }
     }
     GridWorld[3][4].assign_reward(100);
