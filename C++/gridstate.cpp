@@ -79,4 +79,5 @@ int State::action_succ(int action)
             action = copy_action;
         }
     }
+    return action;
 }

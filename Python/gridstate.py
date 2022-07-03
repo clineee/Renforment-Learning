@@ -1,3 +1,4 @@
+from math import gamma
 import numpy as np
 import sys
 import time
@@ -11,9 +12,6 @@ class State():
         self.gamma = 0.99
         self.transition_succ = 0.8
         self.transition_fail = 0.2
-        #reward
-        #index_x
-        #index_y
         
         def set_reward(self, r):
             self.reward = r
@@ -21,6 +19,30 @@ class State():
         def set_index(self, x, y):
             self.index_x = x
             self.index_y = y
+            
+        def get_gridwidth(self):
+            return self.gridwidth
+        
+        def get_gridheight(self):
+            return self.gridwidth
+        
+        def get_gamma(self):
+            return self.gamma
+        
+        def get_gridwidth(self):
+            return self.gridwidth
+        
+        def get_gamma(self):
+            return self.gamma
+        
+        def get_transtion_succ():
+            return self.transition_succ
+        
+        def get_transtion_fail():
+            return self.transition_fail
+        
+        def get_reward():
+            return self.reward
             
         def action_succ(self, action):
             final = False
@@ -38,3 +60,4 @@ class State():
                 if ((self.index_y == 0) and (action == 1)) or ((self.index_y == 3) and (action == 3)):
                     final = False
                     action = copy_action
+            return action
