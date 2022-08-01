@@ -12,20 +12,17 @@ using namespace std;
 int main()
 {
     srand(100);
-    State GridWorld[4][4];
+    State GridWorld[16];
     for(int i = 0; i < 4; i++)
     {
-        for(int j = 0; j < 4; j++)
-        {
-            GridWorld[i][j].assign_reward(-1);
-            GridWorld[i][j].assign_index(i, j);
-        }
+            GridWorld[i].assign_reward(-1);
+            GridWorld[i].assign_index(i);
     }
-    GridWorld[3][4].assign_reward(100);
-    GridWorld[3][0].assign_reward(-10);
-    GridWorld[3][1].assign_reward(-10);
-    GridWorld[2][1].assign_reward(-10);
-    GridWorld[2][2].assign_reward(-10);
+    GridWorld[11].assign_reward(100);
+    GridWorld[3].assign_reward(-10);
+    GridWorld[6].assign_reward(-10);
+    GridWorld[7].assign_reward(-10);
+    GridWorld[10].assign_reward(-10);
 
     return 0;
 }

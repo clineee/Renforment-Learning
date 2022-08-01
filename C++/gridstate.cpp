@@ -1,7 +1,7 @@
 #include "gridstate.h"
 #include <stdlib.h>
 #include <string>
-#include <time.h>
+//#include <time.h>
 
 using namespace std;
 
@@ -20,10 +20,9 @@ void State::assign_reward(int r)
     reward = r;
 }
 
-void State::assign_index(int ix, int iy)
+void State::assign_index(int in)
 {
-    index_x = ix;
-    index_y = iy;
+    index = in;
 }
 
 int State::get_gridwidth()
@@ -68,7 +67,8 @@ int State::action_succ(int action)
         {
             action = rand() % 4;
         }
-        if((index_x == 0 && action == 0) || (index_x == 3 && action == 2))
+        if((index >= 0 && index <=4 && action == 0) || 
+          (index >= 12 && index <= 15 && action == 2))
         {
             final = false; 
             action = copy_action;

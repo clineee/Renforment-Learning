@@ -15,11 +15,10 @@ class State
         float transition_succ;
         float transition_fail;
         int reward;
-        int index_x;
-        int index_y;
+        int index;
     public:
         void assign_reward(int);
-        void assign_index(int, int);
+        void assign_index(int);
         int get_gridwidth();
         int get_gridheight();
         float get_gamma();
